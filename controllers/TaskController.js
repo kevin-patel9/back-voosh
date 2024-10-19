@@ -56,9 +56,9 @@ exports.getAllTask = async (req, res) => {
         
         // reverse data for sorting
         const tasks = {
-            toComplete: sorted !== "true" ? toComplete.reverse() : toComplete,
-            inProcess: sorted !== "true" ? inProcess.reverse() : inProcess,
-            done: sorted !== "true" ? done.reverse() : done
+            toComplete: sorted === 1 ? toComplete.reverse() : toComplete,
+            inProcess: sorted === 1 ? inProcess.reverse() : inProcess,
+            done: sorted === 1 ? done.reverse() : done
         };        
 
         return res.status(200).send({
